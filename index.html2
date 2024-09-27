@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Game Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #proxyButton, #settingsButton, #returnButton, #cogwheelButton {
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Game Page</h1>
+    <button id="proxyButton">Open Google</button>
+    <button id="settingsButton">Settings</button>
+    <button id="returnButton">Return to Game Page</button>
+    <button id="cogwheelButton">⚙️</button>
+
+    <script>
+        document.getElementById('proxyButton').onclick = function() {
+            window.open('proxy.php?url=https://www.google.com', '_blank');
+        };
+
+        document.getElementById('settingsButton').onclick = function() {
+            // Show settings popup (you can implement a modal for this)
+            alert("Settings: Set Panic Key and URL");
+        };
+
+        document.getElementById('returnButton').onclick = function() {
+            // Logic to return to the game page
+            window.location.href = 'yourgamepage.html';
+        };
+
+        document.getElementById('cogwheelButton').onclick = function() {
+            // Logic to add custom URL
+            const customUrl = prompt("Enter your custom URL:");
+            if (customUrl) {
+                window.open(customUrl, '_blank');
+            }
+        };
+    </script>
+</body>
+</html>
